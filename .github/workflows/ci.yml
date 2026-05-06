@@ -17,17 +17,12 @@ jobs:
     uses: DevExpGbb/zava-agent-config/.github/workflows/apm-audit.yml@v1.0.0
 
   build:
-    name: Build & test
+    name: Build & test (placeholder)
     runs-on: ubuntu-latest
     needs: apm-audit
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "pnpm"
-      - run: corepack enable
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm test
-      - run: pnpm build
+      - name: Placeholder build
+        run: |
+          echo "::notice::Skinny demo scaffold — no real Next.js source yet."
+          echo "Once the storefront is fleshed out, restore pnpm install/lint/test/build here."
