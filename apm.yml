@@ -14,11 +14,7 @@ keywords:
 
 dependencies:
   apm:
-    - DevExpGbb/zava-agent-config@^1.0.0
+    - DevExpGbb/zava-agent-config#v1.0.0
   mcp: []
 
 includes: auto
-
-scripts:
-  audit: apm audit --policy ./apm-policy.yaml
-  audit-ci: apm audit --ci --policy ./apm-policy.yaml

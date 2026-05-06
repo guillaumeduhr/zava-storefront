@@ -14,9 +14,7 @@ permissions:
 jobs:
   apm-audit:
     name: APM audit (required)
-    uses: DevExpGbb/zava-agent-config/.github/workflows/apm-audit.yml@main
-    with:
-      policy-path: ./apm-policy.yaml
+    uses: DevExpGbb/zava-agent-config/.github/workflows/apm-audit.yml@v1.0.0
 
   build:
     name: Build & test
