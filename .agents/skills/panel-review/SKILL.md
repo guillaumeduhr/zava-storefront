@@ -67,10 +67,17 @@ A markdown report with two sections — one per persona — each containing:
 ## Process
 
 1. **Read the diff.** `git diff --staged` is the source of truth, not the working tree.
-2. **Invoke the architect persona** (`.apm/agents/architect.agent.md`) with the diff as input. Ask for: scaling implications, coupling, missing abstractions, testability, deviation from existing patterns.
-3. **Invoke the security persona** (`.apm/agents/security.agent.md`) with the diff. Ask for: each item in the `secure-coding-base` checklist, plus any new attack surface.
-4. **Aggregate findings** into the report format above. Tag severity honestly — not every concern is a blocker.
-5. **Surface the report to the human** for action. Do not auto-amend the commit.
+2. **Load guidelines.** Read these now -- they are the rubric for both personas:
+   - `.github/instructions/secure-coding-base.instructions.md`
+   - `.github/instructions/ci-cd-golden-paths.instructions.md`
+   - `.github/instructions/docs-style-guide.instructions.md`
+   - `.agents/guidelines/security-guidelines.md`
+   - `.agents/guidelines/architecture-guidelines.md`
+   - `.agents/guidelines/documentation-guidelines.md`
+3. **Invoke the architect persona** (`.apm/agents/architect.agent.md`) with the diff as input. Ask for: scaling implications, coupling, missing abstractions, testability, deviation from existing patterns, CI/CD golden-path compliance.
+4. **Invoke the security persona** (`.apm/agents/security.agent.md`) with the diff. Ask for: each item in the `secure-coding-base` checklist, plus any new attack surface.
+5. **Aggregate findings** into the report format above. Tag severity honestly -- not every concern is a blocker.
+6. **Surface the report to the human** for action. Do not auto-amend the commit.
 
 ## Hard rules
 
@@ -90,7 +97,10 @@ The `pr-review-gate.hook.md` triggers `panel-review` automatically on `pre-push`
 
 ## See also
 
-- `architect.agent.md` — persona invoked for architectural review
-- `security.agent.md` — persona invoked for security review
-- `secure-coding-base.instructions.md` — the security checklist applied
-- `pr-review-gate.hook.md` — automated trigger
+- `architect.agent.md` -- persona invoked for architectural review
+- `security.agent.md` -- persona invoked for security review
+- `.github/instructions/secure-coding-base.instructions.md` -- security rubric (Zava-wide)
+- `.github/instructions/ci-cd-golden-paths.instructions.md` -- architecture rubric (Zava-wide)
+- `.github/instructions/docs-style-guide.instructions.md` -- documentation rubric (Zava-wide)
+- `.agents/guidelines/` -- zava-storefront project-specific extensions
+- `pr-review-gate.hook.md` -- automated trigger

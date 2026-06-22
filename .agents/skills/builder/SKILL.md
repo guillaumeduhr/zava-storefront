@@ -38,11 +38,15 @@ Turn a work item into a verified, submitted PR on zava-storefront.
 
 ## Bundled assets
 
-- `assets/security-guidelines.md` — load at step 3 (implementation rules)
-- `assets/architecture-guidelines.md` — load at step 3 (structure + dep rules)
-- `assets/documentation-guidelines.md` — load at step 3 (comments + README rules)
 - `assets/pr-description-template.md` — load at step 6 (PR body)
 - `assets/scope-note-template.md` — load at step 1 if out-of-scope items exist
+
+## Shared guidelines (loaded at step 3)
+
+Two-layer model — load both layers:
+
+- **Zava-wide baseline** (`.github/instructions/`): enforce everywhere, all languages
+- **Storefront-specific** (`.agents/guidelines/`): TypeScript / Next.js / zod / pg detail
 
 ---
 
@@ -93,14 +97,19 @@ is dirty, stash or abort — do not carry unrelated changes into this branch.
 
 ### Step 3 — Load guidelines  *(C1 LAZY ASSET)*
 
-Read these files **now** — they govern every line written in step 4:
+Read these files **now** -- they govern every line written in step 4.
 
-- `assets/security-guidelines.md` (input validation, secrets, dep pinning)
-- `assets/architecture-guidelines.md` (layers, cross-layer imports, dep rationale)
-- `assets/documentation-guidelines.md` (why-only comments, docstrings, README)
-- `.github/instructions/secure-coding-base.instructions.md`
-- `.github/instructions/docs-style-guide.instructions.md`
-- `.github/instructions/ci-cd-golden-paths.instructions.md`
+**Layer 1 -- Zava-wide baseline:**
+
+- `.github/instructions/secure-coding-base.instructions.md` (secrets, auth, input handling, crypto, PII)
+- `.github/instructions/ci-cd-golden-paths.instructions.md` (reusable workflows, IaC, deployment gates, dep pinning)
+- `.github/instructions/docs-style-guide.instructions.md` (docstring format per language, README rules, voice)
+
+**Layer 2 -- zava-storefront project-specific:**
+
+- `.agents/guidelines/security-guidelines.md` (zod, pg parameterization, Key Vault patterns)
+- `.agents/guidelines/architecture-guidelines.md` (layer imports, app/lib/infra boundaries, dep rationale)
+- `.agents/guidelines/documentation-guidelines.md` (TSDoc, why-only comments, README update rules)
 
 Also read the core principles from:
 
@@ -235,8 +244,9 @@ Assembled from `assets/pr-description-template.md`. Key fields:
 
 ## See also
 
-- `incident-to-pr` — use for Sev-1/Sev-2 incident postmortems
-- `panel-review` — run on the branch before promoting from draft
-- `.github/agents/architect.agent.md` — design principles applied in step 3
-- `.github/agents/security.agent.md` — security checklist applied in step 3
-- `.github/instructions/secure-coding-base.instructions.md` — the baseline
+- `incident-to-pr` -- use for Sev-1/Sev-2 incident postmortems
+- `panel-review` -- run on the branch before promoting from draft
+- `.github/agents/architect.agent.md` -- design principles applied in step 3
+- `.github/agents/security.agent.md` -- security checklist applied in step 3
+- `.github/instructions/secure-coding-base.instructions.md` -- the Zava-wide baseline
+- `.agents/guidelines/` -- zava-storefront project-specific extensions
