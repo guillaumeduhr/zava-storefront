@@ -26,6 +26,28 @@ This repo pins **`hackathon-brown-eagle-55/zava-agent-config@^1.0.0`** via [`apm
 
 Run `apm install` after cloning to materialize them into your harness.
 
+## API routes
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/products` | List products (`limit`, `offset` query params) |
+| `POST` | `/api/cart/promo` | Apply a promo code to a cart and return updated totals |
+
+### `POST /api/cart/promo`
+
+Body:
+```json
+{
+  "items": [{ "productId": "string", "quantity": 1, "unitPriceCents": 1000 }],
+  "region": "GB",
+  "promoCode": "WELCOME10"
+}
+```
+
+Returns `CartTotals`: `{ subtotalCents, discountCents, taxCents, totalCents }`.
+
+Supported promo codes: `WELCOME10` (10%), `VIP25` (25% on orders ≥ £100), `FREESHIP` (shipping-only, 0 item discount).
+
 ## Local dev
 
 ```bash
