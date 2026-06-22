@@ -1,25 +1,27 @@
 name: zava-storefront
 targets:
-- copilot
+  - copilot
 version: 0.1.0
-description: Zava's customer-facing storefront. Next.js (App Router) + Postgres, deployed
+description:
+  Zava's customer-facing storefront. Next.js (App Router) + Postgres, deployed
   to Azure. Pins zava-agent-config for shared skills, instructions, personas, and
   the apm-audit CI gate.
 author: Zava Engineering
 license: UNLICENSED
 keywords:
-- zava
-- storefront
-- nextjs
-- demo
+  - zava
+  - storefront
+  - nextjs
+  - demo
 dependencies:
   apm:
-  - hackathon-brown-eagle-55/zava-agent-config/plugins/secure-baseline#v5.0.1
-  - hackathon-brown-eagle-55/zava-agent-config/plugins/code-kit#v5.0.1
-  - hackathon-brown-eagle-55/zava-agent-config/plugins/review-kit#v5.0.1
-  - hackathon-brown-eagle-55/zava-agent-config/plugins/release-kit#v5.0.1
-  - hackathon-brown-eagle-55/zava-agent-config/plugins/operate-kit#v5.0.1
-  - danielmeppiel/genesis
+    - hackathon-brown-eagle-55/zava-agent-config/plugins/secure-baseline#v5.0.1
+    - hackathon-brown-eagle-55/zava-agent-config/plugins/code-kit#v5.0.1
+    - hackathon-brown-eagle-55/zava-agent-config/plugins/review-kit#v5.0.1
+    - hackathon-brown-eagle-55/zava-agent-config/plugins/release-kit#v5.0.1
+    - hackathon-brown-eagle-55/zava-agent-config/plugins/operate-kit#v5.0.1
+    - danielmeppiel/genesis
+    - guillaumeduhr/zava-storefront#v0.1.0
   mcp: []
 # sdlc-driver depends on builder and review-panel.
 # All three are co-shipped via includes: auto — no separate dependency

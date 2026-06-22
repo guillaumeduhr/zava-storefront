@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-06-22T12:16:25.251132+00:00'
+generated_at: '2026-06-22T14:25:41.392076+00:00'
 apm_version: 0.20.0
 dependencies:
 - repo_url: danielmeppiel/genesis
@@ -72,6 +72,12 @@ dependencies:
     .agents/skills/genesis/references/audience-boundary.md: sha256:85b1dbc98a0fc3115c6c6a92046a290167e1fcd90fe0ae035ec21026e2ec9387
     .agents/skills/genesis/references/cost-economics-process.md: sha256:e14f743132897132119b0711b252733e4804d55942fca97a2d12d1fc744285f5
   content_hash: sha256:3f941a3e288053f7c0d8111d5febcd2f94de6f9dada7e8479fa676736975a272
+- repo_url: guillaumeduhr/zava-storefront
+  host: github.com
+  resolved_commit: 8db65f0b2a347ffa2636d8f461a500581bb53ac2
+  resolved_ref: v0.1.0
+  package_type: apm_package
+  content_hash: sha256:4bb5cdbbf1196a901f57e5e94b8d9d4be2e10614a2c61d659fc4ff3f4969edfc
 - repo_url: hackathon-brown-eagle-55/zava-agent-config
   host: github.com
   resolved_commit: 7a12679a9e1f55e06d16616ed0244b5fdeaad3da
