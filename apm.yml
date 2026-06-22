@@ -21,6 +21,11 @@ dependencies:
   - hackathon-brown-eagle-55/zava-agent-config/plugins/operate-kit#v5.0.1
   - danielmeppiel/genesis
   mcp: []
+# sdlc-driver depends on builder and review-panel.
+# All three are co-shipped via includes: auto — no separate dependency
+# entries needed for intra-package siblings. If sdlc-driver is ever
+# extracted to its own package, declare builder and review-panel under
+# dependencies.apm at that point.
 includes: auto
 compilation:
   source_attribution: true

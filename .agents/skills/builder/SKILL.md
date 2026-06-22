@@ -5,7 +5,7 @@ description: >-
   description, or TODO — as commits on a new branch and a PR on
   zava-storefront. Activate when the user says "implement this", "build this
   feature", "fix this", "address these review comments", "create a PR for", or
-  "work on this ticket". Also triggers when the user pastes panel-review output
+  "work on this ticket". Also triggers when the user pastes review-panel output
   and asks to apply the fixes, or when a task needs to become code. Reads the
   team's security, architecture, and CI/CD guidelines so the output already
   follows Zava standards. Runs npm run lint and npm test before opening the PR;
@@ -21,7 +21,7 @@ Turn a work item into a verified, submitted PR on zava-storefront.
 ## When to use
 
 - Feature brief, ticket, TODO, or spec → needs to become code on a branch
-- Review findings (from `panel-review` or a human reviewer) → need to be applied
+- Review findings (from `review-panel` or a human reviewer) → need to be applied
 - Bug description → needs a targeted fix with a test
 
 ## When NOT to use
@@ -245,7 +245,7 @@ Assembled from `assets/pr-description-template.md`. Key fields:
 ## See also
 
 - `incident-to-pr` -- use for Sev-1/Sev-2 incident postmortems
-- `panel-review` -- run on the branch before promoting from draft
+- `review-panel` -- run on the branch before promoting from draft
 - `.github/agents/architect.agent.md` -- design principles applied in step 3
 - `.github/agents/security.agent.md` -- security checklist applied in step 3
 - `.github/instructions/secure-coding-base.instructions.md` -- the Zava-wide baseline
